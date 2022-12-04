@@ -146,6 +146,9 @@ dist
 
 # FuseBox cache
 
+# VSCode 
+.vscode
+
 .fusebox/
 
 # DynamoDB Local files
