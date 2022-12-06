@@ -7,5 +7,9 @@ export const daySixPartOne = (data: string): number => {
 };
 
 export const daySixPartTwo = (data: string): number => {
-  return 0;
+  const index = data.split(``).findIndex((_, index, arr) => {
+    const nextFourteen = arr.slice(index, index + 14);
+    return nextFourteen.length === [...new Set(nextFourteen)].length;
+  });
+  return index + 14;
 };

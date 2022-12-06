@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test';
 import * as fs from 'fs';
 import * as path from 'path';
-import { daySixPartOne } from './day-six';
+import { daySixPartOne, daySixPartTwo } from './day-six';
 
 describe(`day five`, () => {
   const file = path.join(import.meta.dir, `./`, `test-data.txt`);
@@ -11,5 +11,8 @@ describe(`day five`, () => {
     const result = daySixPartOne(data);
     expect(result).toBe(6);
   });
-  test(`part two...`, () => {});
+  test(`part two...`, () => {
+    const result = daySixPartTwo(data);
+    expect(result).toBe(23);
+  });
 });
