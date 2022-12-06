@@ -44,13 +44,13 @@ const updateStackWithInstructions = (
   instructions: Instruction[],
   newCraneModel: boolean
 ): string[][] => {
-  let updatedStacks = stacks;
+  let updatedStacks = [...stacks];
   instructions.forEach(({ amount, to, from }) => {
     const movingCrates = newCraneModel
-      ? stacks[from].slice(-amount)
-      : stacks[from].slice(-amount).reverse();
-    stacks[to].push(...movingCrates);
-    stacks[from] = stacks[from].slice(0, -amount);
+      ? updatedStacks[from].slice(-amount)
+      : updatedStacks[from].slice(-amount).reverse();
+    updatedStacks[to].push(...movingCrates);
+    updatedStacks[from] = updatedStacks[from].slice(0, -amount);
   });
   return updatedStacks;
 };
